@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Дальше — клуб психолога Надежды</title>
+<meta name="description" content="Закрытый онлайн-клуб для тех, кто уже разобрался с прошлым и хочет жить дальше — спокойно и с удовольствием. До 8 человек, раз в неделю, ведёт психолог Надежда.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;300;400;500;600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,300;1,7..72,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+:root{
+  --milk:#EEF1EA; --sage:#C7D3C1; --sage-2:#DCE4D6; --sand:#E9E0CF;
+  --pine:#13261F; --pine-2:#24392F; --moss:#5E7363; --ink-soft:#4A5A50;
+  --sun:#E0673A; --line:rgba(19,38,31,.14);
+  --g:clamp(16px,4vw,56px);
+  --serif:"Literata",Georgia,serif; --sans:"Commissioner",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--milk);color:var(--pine);font:400 17px/1.55 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--g)}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--moss)}
+h2{font:200 clamp(40px,6.4vw,92px)/.98 var(--sans);letter-spacing:-.035em}
+h3{font:400 clamp(22px,2.2vw,28px)/1.2 var(--sans);letter-spacing:-.01em}
+.lead{font:300 clamp(19px,1.7vw,23px)/1.5 var(--serif)}
+em,.it{font-family:var(--serif);font-style:italic;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 26px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;transition:transform .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.sun{background:var(--sun);color:#fff}
+.btn.sun:hover{background:#cc5729}
+.btn.ghost{border:1px solid currentColor}
+.btn .ar{width:18px;height:18px}
+
+/* header */
+header{position:absolute;inset:0 0 auto 0;z-index:5;color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{font:300 26px/1 var(--sans);letter-spacing:-.03em;text-decoration:none}
+.logo small{font:300 14px/1 var(--serif);font-style:italic;opacity:.8;margin-left:10px;letter-spacing:0}
+nav{display:flex;gap:30px;font-size:15px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+header .btn{padding:12px 20px;font-size:15px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.35)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#5f6f5d}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:92% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,30,24,.55) 0%,rgba(16,30,24,.2) 45%,rgba(16,30,24,0) 70%),linear-gradient(0deg,rgba(16,30,24,.55) 0%,rgba(16,30,24,0) 45%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(36px,7vh,80px)}
+.hero h1{font:200 clamp(88px,17vw,270px)/.9 var(--sans);letter-spacing:-.055em;margin-left:-.05em;padding-bottom:.06em}
+.hero .sub{max-width:560px;margin-top:22px;font:300 clamp(20px,2vw,26px)/1.4 var(--serif)}
+.hero .sub em{font-weight:400}
+.hero-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:34px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .ghost{color:#fff}
+.facts{display:flex;gap:28px;font-size:14px;line-height:1.35;opacity:.92}
+.facts b{display:block;font:300 28px/1 var(--sans);letter-spacing:-.02em;margin-bottom:6px}
+/* дыхание */
+.breath{display:flex;align-items:center;gap:14px;margin-top:26px;font:300 14px/1 var(--serif);font-style:italic;opacity:.9}
+.breath i{display:block;height:1px;width:140px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.breath i::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(.08)}
+.breath span{min-width:52px}
+.motion .breath i::after{animation:breathe 10s ease-in-out infinite}
+@keyframes breathe{0%{transform:scaleX(.08)}40%{transform:scaleX(1)}50%{transform:scaleX(1)}100%{transform:scaleX(.08)}}
+
+/* узнаёшь */
+.know{padding:clamp(80px,12vw,160px) 0 clamp(60px,8vw,110px)}
+.know .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.know ol{list-style:none;border-top:1px solid var(--line)}
+.know li{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:30px 0;border-bottom:1px solid var(--line);font:300 clamp(22px,2.6vw,36px)/1.25 var(--sans);letter-spacing:-.015em}
+.know li span{font:300 15px/2.4 var(--serif);font-style:italic;color:var(--moss)}
+.know .after{margin-top:40px;max-width:720px}
+
+/* клуб */
+.club{background:var(--pine);color:var(--milk);padding:clamp(80px,11vw,150px) 0}
+.club .eyebrow{color:var(--sage)}
+.club-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,5vw,80px);align-items:start;margin-top:40px}
+.club figure{border-radius:6px;overflow:hidden;position:relative}
+.club figure img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.club figcaption{position:absolute;left:16px;bottom:14px;font:300 14px/1.3 var(--serif);font-style:italic;color:#fff;opacity:.9}
+.club .lead{color:#D9E1D3;margin-top:22px}
+.how{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(238,241,234,.14);margin-top:56px;border:1px solid rgba(238,241,234,.14)}
+.how div{background:var(--pine);padding:30px 28px 34px}
+.how b{display:block;font:200 clamp(44px,4.6vw,64px)/1 var(--sans);letter-spacing:-.04em;color:#fff;margin-bottom:14px}
+.how p{color:#C6D0C1;font-size:16px}
+.months{margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.month{border:1px solid rgba(238,241,234,.2);border-radius:6px;padding:26px 24px 30px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.month .eyebrow{color:#9fb19a}
+.month h3{color:#fff;margin-top:18px}
+.month p{color:#C6D0C1;font-size:15px;margin-top:12px}
+
+/* дневник */
+.diary{padding:clamp(80px,11vw,150px) 0;background:var(--sand)}
+.diary-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.diary .photo{border-radius:6px;overflow:hidden;margin-top:40px}
+.diary .photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.tool{background:var(--milk);border-radius:8px;padding:clamp(22px,3vw,40px);box-shadow:0 1px 0 rgba(19,38,31,.06),0 30px 60px -40px rgba(19,38,31,.35)}
+.steps{display:flex;gap:6px;margin-bottom:26px}
+.steps i{flex:1;height:3px;border-radius:3px;background:var(--sage-2);transition:background .3s}
+.steps i.on{background:var(--pine)}
+.q label{display:block;font:300 clamp(24px,2.4vw,32px)/1.2 var(--sans);letter-spacing:-.015em}
+.q .hint{font:300 15px/1.45 var(--serif);font-style:italic;color:var(--ink-soft);margin:10px 0 18px}
+.q textarea{width:100%;min-height:120px;resize:vertical;border:1px solid var(--line);border-radius:6px;background:#fff;padding:16px;font:400 17px/1.5 var(--sans);color:var(--pine)}
+.q textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
+.tool .row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px}
+.tool button{font:500 15px/1 var(--sans);border:0;cursor:pointer;border-radius:999px;padding:14px 22px}
+.tool .next{background:var(--pine);color:#fff}
+.tool .back{background:none;color:var(--moss);padding-left:0}
+.tool .back[hidden]{display:inline-block;visibility:hidden}
+.entries{margin-top:22px;display:grid;gap:12px}
+.entry{border-left:2px solid var(--sun);background:#fff;border-radius:0 6px 6px 0;padding:16px 18px;font-size:15px}
+.entry .d{font:300 13px/1 var(--serif);font-style:italic;color:var(--moss);margin-bottom:8px}
+.entry dl{display:grid;grid-template-columns:110px 1fr;gap:4px 12px}
+.entry dt{color:var(--moss)}
+.done-note{margin-top:16px;font:300 16px/1.5 var(--serif);font-style:italic}
+
+/* ведущая */
+.host{padding:clamp(80px,11vw,150px) 0}
+.host-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,96px);align-items:center}
+.portrait{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;background:var(--sage)}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.portrait .mono{position:absolute;inset:0;display:grid;place-items:center;font:200 clamp(160px,22vw,300px)/1 var(--sans);color:var(--milk);letter-spacing:-.05em}
+.portrait .todo{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(238,241,234,.92);border-radius:6px;padding:12px 14px;font:400 13px/1.4 var(--sans);color:var(--pine)}
+.host blockquote{font:300 clamp(28px,3.4vw,46px)/1.18 var(--serif);font-style:italic;letter-spacing:-.01em;margin:26px 0 30px}
+.host p+p{margin-top:14px}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.creds span{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:14px}
+
+/* индивидуально */
+.solo{padding:0 0 clamp(80px,11vw,150px)}
+.solo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.card{background:#fff;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .in{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .meta{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.card.text{background:var(--sage-2)}
+
+/* цены */
+.price{background:var(--sage);padding:clamp(80px,11vw,150px) 0}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;align-items:stretch}
+.tier{background:var(--milk);border-radius:8px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:14px;position:relative}
+.tier.hot{background:var(--pine);color:var(--milk);padding-top:38px}
+.tier .tag{position:absolute;top:-12px;left:24px;background:var(--sun);color:#fff;font:500 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.tier .sum{font:200 clamp(48px,5vw,68px)/1 var(--sans);letter-spacing:-.04em}
+.tier .sum small{font:300 18px/1 var(--serif);font-style:italic;letter-spacing:0;margin-left:6px}
+.tier .old{font-size:14px;opacity:.7}
+.tier ul{list-style:none;display:grid;gap:9px;font-size:15px;margin:6px 0 10px}
+.tier li{padding-left:18px;position:relative}
+.tier li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:currentColor}
+.tier .btn{margin-top:auto;justify-content:center}
+.tier:not(.hot) .btn{background:var(--pine);color:#fff}
+.donate{margin-top:26px;max-width:760px;font:300 17px/1.5 var(--serif);font-style:italic}
+
+/* не подходит + faq */
+.fit{padding:clamp(80px,10vw,130px) 0}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,96px)}
+.fit ul{list-style:none;border-top:1px solid var(--line);margin-top:26px}
+.fit li{padding:18px 0;border-bottom:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+details:first-of-type{border-top:1px solid var(--line);margin-top:26px}
+summary{cursor:pointer;list-style:none;font:400 19px/1.35 var(--sans);display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:200;font-size:26px;line-height:.8}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--ink-soft)}
+
+/* финал */
+.final{position:relative;color:#fff;overflow:hidden;background:#4b4a3c}
+.final>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,30,24,.78),rgba(16,30,24,.25) 70%)}
+.final .wrap{position:relative;z-index:2;padding-top:clamp(90px,14vw,190px);padding-bottom:clamp(90px,14vw,190px)}
+.final h2{max-width:900px}
+.final .lead{max-width:600px;margin-top:24px}
+.final .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.final .ghost{color:#fff}
+.dates{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.dates span{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:9px 14px;font-size:14px}
+footer{padding:34px 0 40px;font-size:13px;color:var(--ink-soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.shot .hero{min-height:900px}
+/* появление */
+.motion .rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.motion .rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  nav{display:none}
+  .know .head,.club-grid,.diary-grid,.host-grid,.fit-grid{grid-template-columns:1fr}
+  .months,.solo-grid,.tiers{grid-template-columns:1fr}
+  .tiers{gap:26px}
+  .host-grid .portrait{max-width:460px}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  header .wrap{height:68px}
+  header .btn{display:none}
+  .hero>img{object-position:72% 40%}
+  .hero::after{background:linear-gradient(0deg,rgba(16,30,24,.78) 0%,rgba(16,30,24,.25) 55%,rgba(16,30,24,.1) 100%)}
+  .facts{gap:20px}
+  .facts b{font-size:24px}
+  .know li{grid-template-columns:44px 1fr;gap:10px;padding:22px 0}
+  .how{grid-template-columns:1fr}
+  .entry dl{grid-template-columns:1fr}
+  .entry dt{margin-top:6px}
+  .btn{padding:16px 22px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">дальше<small>клуб Надежды</small></a>
+    <nav>
+      <a href="#club">Клуб</a><a href="#diary">Дневник</a><a href="#host">Надежда</a><a href="#price">Участие</a><a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn" href="#zapis">Прийти на встречу</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="img/hero.webp" alt="Женщина с кружкой у окна ранним утром, глаза закрыты, улыбается">
+  <div class="wrap">
+    <h1>дальше</h1>
+    <p class="sub">Закрытый клуб для тех, кто уже разобрался с&nbsp;прошлым и&nbsp;хочет <em>жить дальше — спокойно и&nbsp;с&nbsp;удовольствием</em></p>
+    <div class="hero-row">
+      <div class="cta">
+        <a class="btn sun" href="#price">Занять место основателя
+          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost" href="#zapis">Открытая встреча</a>
+      </div>
+      <div class="facts">
+        <div><b>до 8</b>человек<br>в группе</div>
+        <div><b>4</b>встречи<br>в месяц</div>
+        <div><b>90</b>минут<br>в Zoom</div>
+      </div>
+    </div>
+    <div class="breath" aria-hidden="true"><i></i><span id="br">вдох</span></div>
+  </div>
+</section>
+
+<section class="know">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="rv">Узнаёшь<br><em>себя?</em></h2>
+      <p class="lead rv">Клуб не&nbsp;для кризиса. Он&nbsp;для того момента, когда самое тяжёлое уже позади, а&nbsp;радоваться жизни так и&nbsp;не&nbsp;получается.</p>
+    </div>
+    <ol>
+      <li class="rv"><span>01</span>Ты знаешь, откуда твоя тревога. Но&nbsp;знать — не&nbsp;значит, что она прошла</li>
+      <li class="rv"><span>02</span>Терапия закончилась, а&nbsp;привычка всё время себя разбирать осталась</li>
+      <li class="rv"><span>03</span>Вокруг мало людей, с&nbsp;которыми можно говорить так&nbsp;же честно, как с&nbsp;психологом</li>
+      <li class="rv"><span>04</span>Старые схемы замечаешь, но&nbsp;уже потом, когда всё случилось</li>
+    </ol>
+    <p class="lead after rv">В&nbsp;«Дальше» учимся замечать свои схемы <em>раньше</em>, чем они начинают тобой рулить. И&nbsp;делаем это среди своих: взрослых людей, которые тоже работают над собой без слёз и&nbsp;драмы.</p>
+  </div>
+</section>
+
+<section class="club" id="club">
+  <div class="wrap">
+    <p class="eyebrow">Как устроен клуб</p>
+    <div class="club-grid">
+      <div>
+        <h2 class="rv">Одна комната,<br><em>восемь своих</em></h2>
+        <p class="lead rv">Группа небольшая и&nbsp;закрытая. Состав не&nbsp;меняется весь месяц, поэтому через пару встреч здесь можно говорить по-настоящему. Надежда ведёт, держит рамку и&nbsp;даёт инструменты из&nbsp;КПТ и&nbsp;гештальта.</p>
+      </div>
+      <figure class="rv"><img src="img/circle.webp" alt="Небольшая группа людей разговаривает вечером в гостиной" loading="lazy"><figcaption>так это ощущается, только в&nbsp;Zoom</figcaption></figure>
+    </div>
+    <div class="how">
+      <div class="rv"><b>пн</b><p>Встреча раз в&nbsp;неделю по&nbsp;понедельникам вечером, 90&nbsp;минут в&nbsp;Zoom. Камеры включены, записи нет.</p></div>
+      <div class="rv"><b>8</b><p>Не&nbsp;больше восьми человек. Новые приходят только в&nbsp;начале месяца.</p></div>
+      <div class="rv"><b>7</b><p>Между встречами — дневник наблюдений: пять минут вечером, чтобы поймать свою схему в&nbsp;моменте.</p></div>
+      <div class="rv"><b>1</b><p>Одна тема на&nbsp;месяц. Чат группы, где Надежда отвечает на&nbsp;вопросы по&nbsp;будням.</p></div>
+    </div>
+    <div class="months">
+      <div class="month rv"><div><p class="eyebrow">Декабрь</p><h3>Итоги года без самобичевания</h3></div><p>Как подвести год и&nbsp;не&nbsp;устроить себе суд. Что забрать в&nbsp;новый, а&nbsp;что оставить.</p></div>
+      <div class="month rv"><div><p class="eyebrow">Январь</p><h3>Хотеть, а&nbsp;не&nbsp;«надо»</h3></div><p>Отличаем свои желания от&nbsp;чужих ожиданий и&nbsp;ставим цели, которые не&nbsp;бросишь в&nbsp;феврале.</p></div>
+      <div class="month rv"><div><p class="eyebrow">Февраль</p><h3>Близость без растворения</h3></div><p>Как быть рядом с&nbsp;людьми и&nbsp;не&nbsp;терять себя: границы, просьбы, честные разговоры.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="diary" id="diary">
+  <div class="wrap diary-grid">
+    <div>
+      <p class="eyebrow">Попробуй прямо сейчас</p>
+      <h2 class="rv" style="margin-top:18px">Дневник<br><em>наблюдений</em></h2>
+      <p class="lead rv" style="margin-top:22px">Это главная практика клуба. Четыре вопроса про один момент дня. Через неделю становится видно, что повторяется, — и&nbsp;появляется выбор.</p>
+      <div class="photo rv"><img src="img/hands.webp" alt="Руки пишут в бумажном блокноте рядом с кружкой чая" loading="lazy"></div>
+    </div>
+    <div class="tool rv" id="tool">
+      <div class="steps"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="q" id="q"></div>
+      <div class="row">
+        <button class="back" id="back" type="button" hidden>← назад</button>
+        <button class="next" id="next" type="button">дальше →</button>
+      </div>
+      <div class="entries" id="entries"></div>
+      <p class="done-note" id="note" hidden>Записи остаются только в&nbsp;твоём браузере. В&nbsp;клубе такие записи разбираем вместе, и&nbsp;за&nbsp;месяц становится видно свою схему целиком.</p>
+    </div>
+  </div>
+</section>
+
+<section class="host" id="host">
+  <div class="wrap host-grid">
+    <div class="portrait rv">
+      <span class="mono">Н</span>
+      <div class="todo">Здесь будет портрет Надежды. Кадр сейчас временный.</div>
+    </div>
+    <div>
+      <p class="eyebrow">Ведёт</p>
+      <h2 class="rv" style="margin-top:18px">Надежда</h2>
+      <blockquote class="rv">«Ко&nbsp;мне приходят как к&nbsp;психологу, а&nbsp;уходят как от&nbsp;коуча»</blockquote>
+      <p class="rv">Больше десяти лет я&nbsp;работала в&nbsp;бизнесе и&nbsp;в&nbsp;банке. В&nbsp;35 случился кризис, я&nbsp;уволилась и&nbsp;пошла разбираться с&nbsp;собой. Прошла личную терапию и&nbsp;поступила учиться на&nbsp;психолога.</p>
+      <p class="rv">На&nbsp;практике поняла, что эта работа меня заряжает. Сейчас веду клиентов индивидуально и&nbsp;собираю клуб для тех, с&nbsp;кем мне самой интересно: взрослых, осознанных, которые хотят не&nbsp;только разобраться, но&nbsp;и&nbsp;жить.</p>
+      <div class="creds rv"><span>Клиническая психология</span><span>КПТ</span><span>Гештальт</span><span>10+ лет в&nbsp;бизнесе</span><span>Практика в&nbsp;Центре результативной психологии</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="solo">
+  <div class="wrap">
+    <p class="eyebrow">Если нужно один на&nbsp;один</p>
+    <h2 class="rv" style="margin-top:18px">Индивидуальная<br><em>работа</em></h2>
+    <div class="solo-grid">
+      <article class="card rv"><img src="img/man.webp" alt="Мужчина у окна офиса вечером" loading="lazy" style="aspect-ratio:4/3;object-position:50% 25%">
+        <div class="in"><h3>Из тупика</h3><p>Для предпринимателей, которые упёрлись и&nbsp;не&nbsp;понимают, куда дальше. Обычно хватает 2–5 встреч.</p><p class="meta">от&nbsp;2 встреч</p></div></article>
+      <article class="card rv"><img src="img/walk.webp" alt="Девушка в пальто идёт по осеннему бульвару и улыбается" loading="lazy" style="object-position:50% 30%">
+        <div class="in"><h3>После расставания</h3><p>Когда после разрыва не&nbsp;ешь, не&nbsp;спишь и&nbsp;не&nbsp;понимаешь, как жить. Восстанавливаем опоры шаг за&nbsp;шагом.</p><p class="meta">курс около 20 встреч</p></div></article>
+      <article class="card text rv"><div class="in"><h3>Регулярная терапия</h3><p>Работа с&nbsp;тревогой, самооценкой, отношениями. Если есть диагноз и&nbsp;психиатр — поддержка между приёмами в&nbsp;подходе КПТ.</p>
+        <p class="meta">Встреча 50 минут — 5 000 ₽<br>4 встречи — 18 000 ₽<br>Знакомство — 3 000 ₽<br>Участникам клуба — 4 000 ₽</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="wrap">
+    <p class="eyebrow">Участие</p>
+    <h2 class="rv" style="margin-top:18px">Первая группа<br><em>стартует 30 ноября</em></h2>
+    <div class="tiers">
+      <div class="tier hot rv"><span class="tag">до 23 ноября</span>
+        <h3>Основатель</h3>
+        <div class="sum">4 900<small>₽ в месяц</small></div>
+        <p class="old">цена фиксируется на&nbsp;3 месяца, потом 5 900 ₽</p>
+        <ul><li>4 встречи группы в&nbsp;месяц</li><li>чат группы и&nbsp;ответы Надежды</li><li>дневник наблюдений с&nbsp;разбором</li><li>первые 8 мест</li></ul>
+        <a class="btn sun" href="#zapis">Занять место</a></div>
+      <div class="tier rv">
+        <h3>Клуб</h3>
+        <div class="sum">5 900<small>₽ в месяц</small></div>
+        <p class="old">с&nbsp;декабрьского набора</p>
+        <ul><li>4 встречи группы в&nbsp;месяц</li><li>чат группы и&nbsp;ответы Надежды</li><li>дневник наблюдений с&nbsp;разбором</li></ul>
+        <a class="btn" href="#zapis">Записаться</a></div>
+      <div class="tier rv">
+        <h3>Клуб + личная встреча</h3>
+        <div class="sum">9 900<small>₽ в месяц</small></div>
+        <p class="old">вместо 10 900 ₽ по&nbsp;отдельности</p>
+        <ul><li>всё, что в&nbsp;клубе</li><li>одна индивидуальная встреча в&nbsp;месяц, 50 минут</li><li>для тех, кому в&nbsp;группе мало места для своего</li></ul>
+        <a class="btn" href="#zapis">Записаться</a></div>
+    </div>
+    <p class="donate rv">Одно место в&nbsp;каждой группе — по&nbsp;донату. Для тех, кому сейчас правда нужно, а&nbsp;денег нет. Напиши Надежде честно, она ответит.</p>
+  </div>
+</section>
+
+<section class="fit" id="faq">
+  <div class="wrap fit-grid">
+    <div>
+      <h2 class="rv">Кому клуб<br><em>не&nbsp;подойдёт</em></h2>
+      <ul>
+        <li class="rv">Если сейчас острое состояние, сильная потеря или разрыв. Тогда сначала лучше индивидуально, а&nbsp;в&nbsp;клуб — когда станет легче.</li>
+        <li class="rv">Если хочется лекций и&nbsp;конспектов. Здесь говорят о&nbsp;своей жизни, а&nbsp;не&nbsp;слушают теорию.</li>
+        <li class="rv">Если нужна помощь врача. Клуб — психологическая поддержка, а&nbsp;не&nbsp;лечение.</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="rv">Вопросы</h2>
+      <details><summary>Я никогда не&nbsp;был в&nbsp;терапии. Мне можно?</summary><p>Можно, если ты не&nbsp;в&nbsp;кризисе и&nbsp;тебе интересно разбираться в&nbsp;себе. Перед стартом будет короткий созвон с&nbsp;Надеждой, на&nbsp;нём и&nbsp;поймёте, подходит ли тебе группа.</p></details>
+      <details><summary>Страшно говорить о&nbsp;личном при чужих</summary><p>Это нормально. Говорить можно ровно столько, сколько хочется. Правила группы: что прозвучало на&nbsp;встрече, остаётся на&nbsp;встрече, записей нет.</p></details>
+      <details><summary>Что если пропущу встречу?</summary><p>Ничего страшного. В&nbsp;чате будет короткий итог встречи и&nbsp;практика на&nbsp;неделю.</p></details>
+      <details><summary>Можно выйти в&nbsp;любой момент?</summary><p>Да. Оплата помесячная, без автосписаний. Не&nbsp;продлил — значит, вышел.</p></details>
+      <details><summary>Мужчинам можно?</summary><p>Да, клуб для всех взрослых. Группы смешанные.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="zapis">
+  <img src="img/online.webp" alt="Ноутбук с видеовстречей группы на кухонном столе вечером" loading="lazy">
+  <div class="wrap">
+    <h2 class="rv">Сначала просто<br><em>приходи посмотреть</em></h2>
+    <p class="lead rv">Открытая встреча клуба — 60 минут с&nbsp;Надеждой и&nbsp;такими&nbsp;же людьми, как ты. Бесплатно. Поймёшь, твоё или нет, и&nbsp;только потом решишь.</p>
+    <div class="dates rv"><span>чт, 19 ноября, 19:30</span><span>вс, 22 ноября, 12:00</span></div>
+    <div class="cta rv">
+      <a class="btn sun" href="#" data-todo="бот или телеграм Надежды">Записаться на&nbsp;встречу</a>
+      <a class="btn ghost" href="#" data-todo="бот или телеграм Надежды">Написать «ДАЛЬШЕ»</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>«Дальше» — клуб психолога Надежды. Психологическая поддержка, не&nbsp;медицинская помощь.</span><span>© 2026</span></div></footer>
+
+<script>
+// движение: на маке Влада включено «Уменьшить движение», поэтому ?motion=1 включает принудительно
+(function(){
+  if(/[?&]shot=1/.test(location.search)){ document.documentElement.classList.add('shot'); return; }
+  let force=false;
+  try{ if(/[?&]motion=1/.test(location.search)) localStorage.setItem('motion','1'); force=localStorage.getItem('motion')==='1'; }catch(e){ force=/[?&]motion=1/.test(location.search); }
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(force||!reduce){
+    document.documentElement.classList.add('motion');
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+    // подпись дыхания: 4 с вдох, 1 с пауза, 5 с выдох — совпадает с анимацией линии
+    const br=document.getElementById('br'); let t=0;
+    setInterval(()=>{ t=(t+1)%10; br.textContent=t<4?'вдох':t<5?'пауза':'выдох'; },1000);
+  }
+})();
+
+// дневник наблюдений
+(function(){
+  const Q=[
+    ['Что случилось?','Один момент сегодня, когда стало неприятно. Коротко, как в новостях.','Коллега не ответил на сообщение'],
+    ['Что ты подумал(а)?','Первая мысль, даже если она глупая.','Опять я навязываюсь'],
+    ['Что почувствовал(а)?','Чувство и где оно в теле.','Стыд, сжалось в груди'],
+    ['Что сделал(а) дальше?','И что можно было бы сделать иначе.','Ничего не написала весь день. Можно было спросить прямо']
+  ];
+  const keys=['Случилось','Подумал(а)','Почувствовал(а)','Сделал(а)'];
+  let i=0, a=['','','',''], list=[];
+  try{ list=JSON.parse(localStorage.getItem('dalshe-diary')||'[]'); }catch(e){}
+  const q=document.getElementById('q'), next=document.getElementById('next'), back=document.getElementById('back'),
+        steps=[...document.querySelectorAll('.steps i')], box=document.getElementById('entries'), note=document.getElementById('note');
+  function esc(s){ return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function draw(){
+    q.innerHTML='<label for="ta">'+Q[i][0]+'</label><p class="hint">'+Q[i][1]+'</p><textarea id="ta" placeholder="Например: '+Q[i][2]+'"></textarea>';
+    const ta=q.querySelector('textarea'); ta.value=a[i]; ta.oninput=()=>a[i]=ta.value;
+    steps.forEach((s,k)=>s.classList.toggle('on',k<=i));
+    back.hidden=i===0; next.textContent=i===3?'записать':'дальше →';
+  }
+  function render(){
+    box.innerHTML=list.slice(-3).reverse().map(e=>'<div class="entry"><p class="d">'+esc(e.d)+'</p><dl>'+keys.map((k,n)=>'<dt>'+k+'</dt><dd>'+esc(e.a[n]||'—')+'</dd>').join('')+'</dl></div>').join('');
+    note.hidden=!list.length;
+  }
+  next.onclick=()=>{
+    if(i<3){ i++; draw(); q.querySelector('textarea').focus({preventScroll:true}); return; }
+    if(!a.join('').trim()){ i=0; draw(); return; }
+    list.push({d:new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}),a:a.slice()});
+    try{ localStorage.setItem('dalshe-diary',JSON.stringify(list.slice(-20))); }catch(e){}
+    a=['','','','']; i=0; draw(); render();
+  };
+  back.onclick=()=>{ if(i>0){ i--; draw(); } };
+  draw(); render();
+})();
+</script>
+</body>
+</html>
